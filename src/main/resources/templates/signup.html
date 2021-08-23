@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign Up Form</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous"
+  />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <!-- Main css -->
+  <link rel="stylesheet" th:href="@{/static/css/signup.css}">
+  <script th:src="@{/static/js/sign_up.js}"></script>
+</head>
+<body>
+
+<div class="main">
+
+  <!-- Sign up form -->
+  <section class="signup">
+    <div class="container">
+      <div class="signup-content">
+        <div class="signup-form">
+          <h2 class="form-title">Sign up</h2>
+          <form method="POST" class="register-form"
+                id="register-form" th:action="@{/user/signup}">
+
+            <div class="form-group">
+              <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+              <input type="text" name="name" id="name" placeholder="Your ID"/>
+            </div>
+
+            <div class="form-group">
+              <label for="email"><i class="zmdi zmdi-email"></i></label>
+              <input type="email"  name="email" id="email" placeholder="Your Email"/>
+            </div>
+            <div class="form-group">
+              <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+              <input type="password" name="upwd" id="pass" placeholder="Password"/>
+            </div>
+            <div class="form-group">
+              <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+              <input type="password" name="re_upwd" id="re_pass" placeholder="Repeat your password"/>
+            </div>
+
+            <div class="form-group form-button">
+              <input type="button" name="signup" id="signup" class="form-submit" value="가입하기"/>
+            </div>
+          </form>
+        </div>
+
+        <div class="signup-image">
+          <figure><img th:src="@{/static/images/signin-image.jpg}" alt="sing up image"></figure>
+          <a th:href="@{/user/login_page}" style="text-decoration:underline !important" class="signup-image-link">I am already member</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+<th:block th:replace="fragment/soriel_Footer :: footerFragment"></th:block>
+</body>
+</html>
