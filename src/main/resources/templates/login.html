@@ -5,16 +5,23 @@
     <title>로그인 페이지</title>
 </head>
 <body>
-<h1>로그인</h1>
-<hr>
 
-<form action="/user/login" method="post">
-    <input type="hidden" th:name="${_csrf?.parameterName}"
-           th:value="${_csrf?.token}" />
-
-    id : <input type="text" name="id" placeholder="id 넣어주삼">
+<h4>로그인</h4>
+<form action="/login" method="post">
+    id : <input type="text" name="id" placeholder="id">
     pw : <input type="password" name="password" placeholder="비밀번호">
     <button type="submit">로그인</button>
 </form>
+<hr/>
+
+<h4>회원가입</h4>
+<form action="/login" method="post">
+    id : <input type="text" name="id" placeholder="id">
+    pw : <input type="password" name="password" placeholder="비밀번호">
+    email : <input type="text" name="email" placeholder="이메일">
+    <button type="submit">로그인</button>
+</form>
+<hr/>
+
 </body>
 </html>
